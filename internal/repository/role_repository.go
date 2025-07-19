@@ -19,6 +19,7 @@ type RoleRepository interface {
 	UpdateStatus(id uint, status int) error
 	AssignPermissions(roleID uint, permissionIDs []uint) error
 	GetRolePermissions(roleID uint) ([]*model.Permission, error)
+	Count() (int64, error)
 }
 
 type roleRepository struct {
@@ -136,4 +137,11 @@ func (r *roleRepository) GetRolePermissions(roleID uint) ([]*model.Permission, e
 	}
 
 	return permissions, nil
+}
+
+// Count 获取角色总数
+func (r *roleRepository) Count() (int64, error) {
+	var count int64
+	err := r.db.Model(&model.Role{}).Count(&count).Error
+	return count, err
 }
