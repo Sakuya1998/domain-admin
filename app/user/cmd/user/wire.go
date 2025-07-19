@@ -6,11 +6,11 @@
 package main
 
 import (
-	"domain-admin/app/user/internal/biz"
-	"domain-admin/app/user/internal/conf"
-	"domain-admin/app/user/internal/data"
-	"domain-admin/app/user/internal/server"
-	"domain-admin/app/user/internal/service"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/biz"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/conf"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/data"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/server"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/service"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"

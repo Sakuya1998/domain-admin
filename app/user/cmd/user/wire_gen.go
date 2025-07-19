@@ -7,11 +7,11 @@
 package main
 
 import (
-	"domain-admin/app/user/internal/biz"
-	"domain-admin/app/user/internal/conf"
-	"domain-admin/app/user/internal/data"
-	"domain-admin/app/user/internal/server"
-	"domain-admin/app/user/internal/service"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/biz"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/conf"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/data"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/server"
+	"github.com/Sakuya1998/domain-admin/app/user/internal/service"
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
 )
@@ -28,11 +28,11 @@ func wireApp(confServer *conf.Server, confData *conf.Data, logger log.Logger) (*
 	if err != nil {
 		return nil, nil, err
 	}
-	greeterRepo := data.NewGreeterRepo(dataData, logger)
-	greeterUsecase := biz.NewGreeterUsecase(greeterRepo, logger)
-	greeterService := service.NewGreeterService(greeterUsecase)
-	grpcServer := server.NewGRPCServer(confServer, greeterService, logger)
-	httpServer := server.NewHTTPServer(confServer, greeterService, logger)
+	userRepo := data.NewUserRepo(dataData, logger)
+	userUsecase := biz.NewUserUsecase(userRepo, logger)
+	userService := service.NewUserService(userUsecase)
+	grpcServer := server.NewGRPCServer(confServer, userService, logger)
+	httpServer := server.NewHTTPServer(confServer, userService, logger)
 	app := newApp(logger, grpcServer, httpServer)
 	return app, func() {
 		cleanup()
