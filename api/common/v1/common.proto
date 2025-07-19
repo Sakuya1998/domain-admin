@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+package api.common.v1;
+
+option go_package = "github.com/Sakuya1998/domain-admin/shared/api/common/v1;v1";
+
+import "google/protobuf/timestamp.proto";
+import "validate/validate.proto";
+
+// 响应
+message Response {
+    int32 code = 1;
+    string message = 2;
+    google.protobuf.Timestamp timestamp = 3;
+}
+
+// 分页请求
+message PageRequest {
+  int32 page = 1 [(validate.rules).int32.gte = 1];
+  int32 page_size = 2 [(validate.rules).int32 = {gte: 1, lte: 100}];
+  string sort_by = 3;
+  string sort_order = 4; // asc, desc
+}
+
+// 分页响应
+message PageResponse {
+  int32 page = 1;
+  int32 page_size = 2;
+  int64 total = 3;
+  int32 total_pages = 4;
+}
+
+// ID请求
+message IDRequest {
+  int64 id = 1 [(validate.rules).int64.gt = 0];
+}
+
+// IDs请求
+message IDsRequest {
+  repeated int64 ids = 1 [(validate.rules).repeated.min_items = 1];
+}
+
+// 空响应
+message EmptyResponse {}
+
+// 状态枚举
+enum Status {
+  STATUS_UNSPECIFIED = 0;
+  STATUS_ACTIVE = 1;
+  STATUS_INACTIVE = 2;
+  STATUS_DELETED = 3;
+}
+
+// 操作类型枚举
+enum OperationType {
+  OPERATION_TYPE_UNSPECIFIED = 0;
+  OPERATION_TYPE_CREATE = 1;
+  OPERATION_TYPE_UPDATE = 2;
+  OPERATION_TYPE_DELETE = 3;
+  OPERATION_TYPE_BATCH_DELETE = 4;
+}
+
+// 用户角色枚举
+enum UserRole {
+  USER_ROLE_UNSPECIFIED = 0;
+  USER_ROLE_USER = 1;
+  USER_ROLE_ADMIN = 2;
+}
+
+// SSL类型枚举
+enum SSLType {
+  SSL_TYPE_UNSPECIFIED = 0;
+  SSL_TYPE_TLS = 1;
+  SSL_TYPE_STARTTLS = 2;
+}
+
+// 通知类型枚举
+enum NotifyType {
+  NOTIFY_TYPE_UNSPECIFIED = 0;
+  NOTIFY_TYPE_EMAIL = 1;
+  NOTIFY_TYPE_WEBHOOK = 2;
+  NOTIFY_TYPE_WECHAT_WORK = 3;
+  NOTIFY_TYPE_DINGTALK = 4;
+  NOTIFY_TYPE_FEISHU = 5;
+  NOTIFY_TYPE_TELEGRAM = 6;
+}
+
+// 事件类型枚举
+enum EventType {
+  EVENT_TYPE_UNSPECIFIED = 0;
+  EVENT_TYPE_SSL_CERT_EXPIRE = 1;
+  EVENT_TYPE_DOMAIN_EXPIRE = 2;
+  EVENT_TYPE_MONITOR_DOWN = 3;
+}
+
+// 监控状态枚举
+enum MonitorStatus {
+  MONITOR_STATUS_UNSPECIFIED = 0;
+  MONITOR_STATUS_UP = 1;
+  MONITOR_STATUS_DOWN = 2;
+  MONITOR_STATUS_UNKNOWN = 3;
+}

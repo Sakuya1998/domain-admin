@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+package api.user.v1;
+
+option go_package = "github.com/Sakuya1998/domain-admin/api/user/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.user.v1";
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+import "api/common/v1/common.proto";
+import "validate/validate.proto";
+
+service User {
+   rpc Register (RegisterRequest) returns (RegisterReply) {
+      option (google.api.http) = {
+         post: "/api/v1/users/register"
+         body: "*"
+      };
+   }
+   rpc Login (LoginRequest) returns (LoginReply) {
+      option (google.api.http) = {
+         post: "/api/v1/users/login"
+         body: "*"
+      };
+   }
+   rpc Logout (LogoutRequest) returns (LogoutReply) {
+      option (google.api.http) = {
+         post: "/api/v1/users/logout"
+         body: "*"
+      };
+   }
+   rpc GetUserInfo (GetUserInfoRequest) returns (GetUserInfoReply) {
+      option (google.api.http) = {
+         get: "/api/v1/users/{id}"
+      };
+   }
+   rpc UpdateUserInfo (UpdateUserInfoRequest) returns (UpdateUserInfoReply) {
+      option (google.api.http) = {
+         put: "/api/v1/users/{id}"
+         body: "*"
+      };
+   }
+   rpc UpdateUserPassword (UpdateUserPasswordRequest) returns (UpdateUserPasswordReply) {
+      option (google.api.http) = {
+         put: "/api/v1/users/{id}/password"
+         body: "*"
+      };
+   }
+  rpc UpdateUserStatus(UpdateUserStatusRequest) returns (api.common.v1.EmptyResponse) {
+    option (google.api.http) = {
+      put: "/api/v1/users/{id}/status"
+      body: "*"
+    };
+  }   
+   rpc GetUserList (GetUserListRequest) returns (GetUserListReply) {
+      option (google.api.http) = {
+         get: "/api/v1/users"
+      };
+   }
+   rpc AddUser (AddUserRequest) returns (AddUserReply) {
+      option (google.api.http) = {
+         post: "/api/v1/users"
+         body: "*"
+      };
+   }
+   rpc DeleteUser (DeleteUserRequest) returns (DeleteUserReply) {
+      option (google.api.http) = {
+         delete: "/api/v1/users/{id}"
+      };
+   }
+   rpc ResetUserPassword (ResetUserPasswordRequest) returns (ResetUserPasswordReply) {
+      option (google.api.http) = {
+         put: "/api/v1/users/{id}/reset-password"
+         body: "*"
+      };
+   }
+
+}
+
+message RegisterRequest {
+   string email = 1;
+   string password = 2;
+}
+
+message RegisterReply {}
+
+message CreateUserRequest {}
+message CreateUserReply {}
+
+message UpdateUserRequest {}
+message UpdateUserReply {}
+
+message DeleteUserRequest {}
+message DeleteUserReply {}
+
+message GetUserRequest {}
+message GetUserReply {}
+
+message ListUserRequest {}
+message ListUserReply {}
