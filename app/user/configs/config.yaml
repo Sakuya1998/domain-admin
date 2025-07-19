@@ -8,8 +8,9 @@ server:
 data:
   database:
     driver: mysql
-    source: root:root@tcp(127.0.0.1:3306)/test?parseTime=True&loc=Local
+    source: domain_admin:domain_admin@tcp(izayoisakuya.top:3307)/domain_admin?parseTime=True&loc=Local
   redis:
-    addr: 127.0.0.1:6379
+    addr: izayoisakuya.top:6379
+    password: redis_PZBCDE
     read_timeout: 0.2s
     write_timeout: 0.2s
