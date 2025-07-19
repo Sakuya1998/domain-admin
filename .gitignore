@@ -5,3 +5,5 @@ tmp
 tmp/*
 .vercel
 .vercel/*
+web
+web/*

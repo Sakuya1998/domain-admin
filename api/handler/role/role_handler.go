@@ -149,7 +149,7 @@ func (h *RoleHandler) DeleteRole(c *gin.Context) {
 // @Param page query int false "页码" default(1)
 // @Param page_size query int false "每页数量" default(10)
 // @Param search query string false "搜索关键词"
-// @Success 200 {object} response.Response
+// @Success 200 {object} response.Response{data=pagination.PageResult}
 // @Failure 400 {object} response.Response
 // @Router /api/roles [get]
 func (h *RoleHandler) ListRoles(c *gin.Context) {
@@ -161,7 +161,8 @@ func (h *RoleHandler) ListRoles(c *gin.Context) {
 		return
 	}
 
-	response.SuccessWithPagination(c, roles, total, page)
+	result := pagination.NewPageResult(total, roles)
+	response.Success(c, result)
 }
 
 // UpdateRoleStatus 更新角色状态
