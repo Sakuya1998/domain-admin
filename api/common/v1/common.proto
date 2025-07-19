@@ -3,15 +3,18 @@ syntax = "proto3";
 package api.common.v1;
 
 option go_package = "github.com/Sakuya1998/domain-admin/shared/api/common/v1;v1";
-
+option java_multiple_files = true;
+option java_package = "api.common.v1";
 import "google/protobuf/timestamp.proto";
 import "validate/validate.proto";
 
 // 响应
-message Response {
-    int32 code = 1;
-    string message = 2;
-    google.protobuf.Timestamp timestamp = 3;
+message Reply {
+    int32  code = 1;                    // 状态码(数字)
+    string message = 2;                 // 响应消息(文字描述)
+    google.protobuf.Timestamp timestamp = 3;  // 时间戳
+    string trace_id = 4;                // 追踪ID(用于分布式链路追踪)
+    string request_id = 5;              // 请求ID(用于请求追踪)    
 }
 
 // 分页请求
@@ -23,7 +26,7 @@ message PageRequest {
 }
 
 // 分页响应
-message PageResponse {
+message PageReply {
   int32 page = 1;
   int32 page_size = 2;
   int64 total = 3;
@@ -41,7 +44,7 @@ message IDsRequest {
 }
 
 // 空响应
-message EmptyResponse {}
+message EmptyReply {}
 
 // 状态枚举
 enum Status {
