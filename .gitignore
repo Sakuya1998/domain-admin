@@ -3,5 +3,5 @@ logs
 *toml
 tmp
 tmp/*
-.vercel/
+.vercel
 .vercel/*
