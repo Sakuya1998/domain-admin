@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v3.21.12
-// source: api/common/v1/common.proto
+// source: common/v1/common.proto
 
 package v1
 
@@ -60,11 +60,11 @@ func (x Status) String() string {
 }
 
 func (Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_api_common_v1_common_proto_enumTypes[0].Descriptor()
+	return file_common_v1_common_proto_enumTypes[0].Descriptor()
 }
 
 func (Status) Type() protoreflect.EnumType {
-	return &file_api_common_v1_common_proto_enumTypes[0]
+	return &file_common_v1_common_proto_enumTypes[0]
 }
 
 func (x Status) Number() protoreflect.EnumNumber {
@@ -73,7 +73,7 @@ func (x Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Status.Descriptor instead.
 func (Status) EnumDescriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{0}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{0}
 }
 
 // 操作类型枚举
@@ -119,11 +119,11 @@ func (x OperationType) String() string {
 }
 
 func (OperationType) Descriptor() protoreflect.EnumDescriptor {
-	return file_api_common_v1_common_proto_enumTypes[1].Descriptor()
+	return file_common_v1_common_proto_enumTypes[1].Descriptor()
 }
 
 func (OperationType) Type() protoreflect.EnumType {
-	return &file_api_common_v1_common_proto_enumTypes[1]
+	return &file_common_v1_common_proto_enumTypes[1]
 }
 
 func (x OperationType) Number() protoreflect.EnumNumber {
@@ -132,7 +132,7 @@ func (x OperationType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use OperationType.Descriptor instead.
 func (OperationType) EnumDescriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{1}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{1}
 }
 
 // 用户角色枚举
@@ -169,11 +169,11 @@ func (x UserRole) String() string {
 }
 
 func (UserRole) Descriptor() protoreflect.EnumDescriptor {
-	return file_api_common_v1_common_proto_enumTypes[2].Descriptor()
+	return file_common_v1_common_proto_enumTypes[2].Descriptor()
 }
 
 func (UserRole) Type() protoreflect.EnumType {
-	return &file_api_common_v1_common_proto_enumTypes[2]
+	return &file_common_v1_common_proto_enumTypes[2]
 }
 
 func (x UserRole) Number() protoreflect.EnumNumber {
@@ -182,7 +182,7 @@ func (x UserRole) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use UserRole.Descriptor instead.
 func (UserRole) EnumDescriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{2}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{2}
 }
 
 // SSL类型枚举
@@ -219,11 +219,11 @@ func (x SSLType) String() string {
 }
 
 func (SSLType) Descriptor() protoreflect.EnumDescriptor {
-	return file_api_common_v1_common_proto_enumTypes[3].Descriptor()
+	return file_common_v1_common_proto_enumTypes[3].Descriptor()
 }
 
 func (SSLType) Type() protoreflect.EnumType {
-	return &file_api_common_v1_common_proto_enumTypes[3]
+	return &file_common_v1_common_proto_enumTypes[3]
 }
 
 func (x SSLType) Number() protoreflect.EnumNumber {
@@ -232,7 +232,7 @@ func (x SSLType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SSLType.Descriptor instead.
 func (SSLType) EnumDescriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{3}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{3}
 }
 
 // 通知类型枚举
@@ -281,11 +281,11 @@ func (x NotifyType) String() string {
 }
 
 func (NotifyType) Descriptor() protoreflect.EnumDescriptor {
-	return file_api_common_v1_common_proto_enumTypes[4].Descriptor()
+	return file_common_v1_common_proto_enumTypes[4].Descriptor()
 }
 
 func (NotifyType) Type() protoreflect.EnumType {
-	return &file_api_common_v1_common_proto_enumTypes[4]
+	return &file_common_v1_common_proto_enumTypes[4]
 }
 
 func (x NotifyType) Number() protoreflect.EnumNumber {
@@ -294,7 +294,7 @@ func (x NotifyType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NotifyType.Descriptor instead.
 func (NotifyType) EnumDescriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{4}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{4}
 }
 
 // 事件类型枚举
@@ -334,11 +334,11 @@ func (x EventType) String() string {
 }
 
 func (EventType) Descriptor() protoreflect.EnumDescriptor {
-	return file_api_common_v1_common_proto_enumTypes[5].Descriptor()
+	return file_common_v1_common_proto_enumTypes[5].Descriptor()
 }
 
 func (EventType) Type() protoreflect.EnumType {
-	return &file_api_common_v1_common_proto_enumTypes[5]
+	return &file_common_v1_common_proto_enumTypes[5]
 }
 
 func (x EventType) Number() protoreflect.EnumNumber {
@@ -347,7 +347,7 @@ func (x EventType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use EventType.Descriptor instead.
 func (EventType) EnumDescriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{5}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{5}
 }
 
 // 监控状态枚举
@@ -387,11 +387,11 @@ func (x MonitorStatus) String() string {
 }
 
 func (MonitorStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_api_common_v1_common_proto_enumTypes[6].Descriptor()
+	return file_common_v1_common_proto_enumTypes[6].Descriptor()
 }
 
 func (MonitorStatus) Type() protoreflect.EnumType {
-	return &file_api_common_v1_common_proto_enumTypes[6]
+	return &file_common_v1_common_proto_enumTypes[6]
 }
 
 func (x MonitorStatus) Number() protoreflect.EnumNumber {
@@ -400,7 +400,7 @@ func (x MonitorStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use MonitorStatus.Descriptor instead.
 func (MonitorStatus) EnumDescriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{6}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{6}
 }
 
 // 响应
@@ -418,7 +418,7 @@ type Reply struct {
 
 func (x *Reply) Reset() {
 	*x = Reply{}
-	mi := &file_api_common_v1_common_proto_msgTypes[0]
+	mi := &file_common_v1_common_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -430,7 +430,7 @@ func (x *Reply) String() string {
 func (*Reply) ProtoMessage() {}
 
 func (x *Reply) ProtoReflect() protoreflect.Message {
-	mi := &file_api_common_v1_common_proto_msgTypes[0]
+	mi := &file_common_v1_common_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *Reply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Reply.ProtoReflect.Descriptor instead.
 func (*Reply) Descriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{0}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Reply) GetCode() int32 {
@@ -503,7 +503,7 @@ type PageRequest struct {
 
 func (x *PageRequest) Reset() {
 	*x = PageRequest{}
-	mi := &file_api_common_v1_common_proto_msgTypes[1]
+	mi := &file_common_v1_common_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -515,7 +515,7 @@ func (x *PageRequest) String() string {
 func (*PageRequest) ProtoMessage() {}
 
 func (x *PageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_api_common_v1_common_proto_msgTypes[1]
+	mi := &file_common_v1_common_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -528,7 +528,7 @@ func (x *PageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PageRequest.ProtoReflect.Descriptor instead.
 func (*PageRequest) Descriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{1}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PageRequest) GetPage() int32 {
@@ -587,7 +587,7 @@ type PageReply struct {
 
 func (x *PageReply) Reset() {
 	*x = PageReply{}
-	mi := &file_api_common_v1_common_proto_msgTypes[2]
+	mi := &file_common_v1_common_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -599,7 +599,7 @@ func (x *PageReply) String() string {
 func (*PageReply) ProtoMessage() {}
 
 func (x *PageReply) ProtoReflect() protoreflect.Message {
-	mi := &file_api_common_v1_common_proto_msgTypes[2]
+	mi := &file_common_v1_common_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -612,7 +612,7 @@ func (x *PageReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PageReply.ProtoReflect.Descriptor instead.
 func (*PageReply) Descriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{2}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PageReply) GetCurrentPage() int32 {
@@ -660,7 +660,7 @@ type IDRequest struct {
 
 func (x *IDRequest) Reset() {
 	*x = IDRequest{}
-	mi := &file_api_common_v1_common_proto_msgTypes[3]
+	mi := &file_common_v1_common_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -672,7 +672,7 @@ func (x *IDRequest) String() string {
 func (*IDRequest) ProtoMessage() {}
 
 func (x *IDRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_api_common_v1_common_proto_msgTypes[3]
+	mi := &file_common_v1_common_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -685,7 +685,7 @@ func (x *IDRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IDRequest.ProtoReflect.Descriptor instead.
 func (*IDRequest) Descriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{3}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *IDRequest) GetId() int64 {
@@ -705,7 +705,7 @@ type IDsRequest struct {
 
 func (x *IDsRequest) Reset() {
 	*x = IDsRequest{}
-	mi := &file_api_common_v1_common_proto_msgTypes[4]
+	mi := &file_common_v1_common_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -717,7 +717,7 @@ func (x *IDsRequest) String() string {
 func (*IDsRequest) ProtoMessage() {}
 
 func (x *IDsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_api_common_v1_common_proto_msgTypes[4]
+	mi := &file_common_v1_common_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -730,7 +730,7 @@ func (x *IDsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IDsRequest.ProtoReflect.Descriptor instead.
 func (*IDsRequest) Descriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{4}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *IDsRequest) GetIds() []int64 {
@@ -749,7 +749,7 @@ type EmptyReply struct {
 
 func (x *EmptyReply) Reset() {
 	*x = EmptyReply{}
-	mi := &file_api_common_v1_common_proto_msgTypes[5]
+	mi := &file_common_v1_common_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -761,7 +761,7 @@ func (x *EmptyReply) String() string {
 func (*EmptyReply) ProtoMessage() {}
 
 func (x *EmptyReply) ProtoReflect() protoreflect.Message {
-	mi := &file_api_common_v1_common_proto_msgTypes[5]
+	mi := &file_common_v1_common_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -774,14 +774,14 @@ func (x *EmptyReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EmptyReply.ProtoReflect.Descriptor instead.
 func (*EmptyReply) Descriptor() ([]byte, []int) {
-	return file_api_common_v1_common_proto_rawDescGZIP(), []int{5}
+	return file_common_v1_common_proto_rawDescGZIP(), []int{5}
 }
 
-var File_api_common_v1_common_proto protoreflect.FileDescriptor
+var File_common_v1_common_proto protoreflect.FileDescriptor
 
-const file_api_common_v1_common_proto_rawDesc = "" +
+const file_common_v1_common_proto_rawDesc = "" +
 	"\n" +
-	"\x1aapi/common/v1/common.proto\x12\rapi.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xa6\x02\n" +
+	"\x16common/v1/common.proto\x12\rapi.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xa6\x02\n" +
 	"\x05Reply\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x128\n" +
@@ -860,20 +860,20 @@ const file_api_common_v1_common_proto_rawDesc = "" +
 	"\rapi.common.v1P\x01Z3github.com/Sakuya1998/domain-admin/api/common/v1;v1b\x06proto3"
 
 var (
-	file_api_common_v1_common_proto_rawDescOnce sync.Once
-	file_api_common_v1_common_proto_rawDescData []byte
+	file_common_v1_common_proto_rawDescOnce sync.Once
+	file_common_v1_common_proto_rawDescData []byte
 )
 
-func file_api_common_v1_common_proto_rawDescGZIP() []byte {
-	file_api_common_v1_common_proto_rawDescOnce.Do(func() {
-		file_api_common_v1_common_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_api_common_v1_common_proto_rawDesc), len(file_api_common_v1_common_proto_rawDesc)))
+func file_common_v1_common_proto_rawDescGZIP() []byte {
+	file_common_v1_common_proto_rawDescOnce.Do(func() {
+		file_common_v1_common_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_v1_common_proto_rawDesc), len(file_common_v1_common_proto_rawDesc)))
 	})
-	return file_api_common_v1_common_proto_rawDescData
+	return file_common_v1_common_proto_rawDescData
 }
 
-var file_api_common_v1_common_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
-var file_api_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
-var file_api_common_v1_common_proto_goTypes = []any{
+var file_common_v1_common_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
+var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_common_v1_common_proto_goTypes = []any{
 	(Status)(0),                   // 0: api.common.v1.Status
 	(OperationType)(0),            // 1: api.common.v1.OperationType
 	(UserRole)(0),                 // 2: api.common.v1.UserRole
@@ -890,7 +890,7 @@ var file_api_common_v1_common_proto_goTypes = []any{
 	nil,                           // 13: api.common.v1.Reply.MetadataEntry
 	(*timestamppb.Timestamp)(nil), // 14: google.protobuf.Timestamp
 }
-var file_api_common_v1_common_proto_depIdxs = []int32{
+var file_common_v1_common_proto_depIdxs = []int32{
 	14, // 0: api.common.v1.Reply.timestamp:type_name -> google.protobuf.Timestamp
 	13, // 1: api.common.v1.Reply.metadata:type_name -> api.common.v1.Reply.MetadataEntry
 	2,  // [2:2] is the sub-list for method output_type
@@ -900,27 +900,27 @@ var file_api_common_v1_common_proto_depIdxs = []int32{
 	0,  // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_api_common_v1_common_proto_init() }
-func file_api_common_v1_common_proto_init() {
-	if File_api_common_v1_common_proto != nil {
+func init() { file_common_v1_common_proto_init() }
+func file_common_v1_common_proto_init() {
+	if File_common_v1_common_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_common_v1_common_proto_rawDesc), len(file_api_common_v1_common_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_common_proto_rawDesc), len(file_common_v1_common_proto_rawDesc)),
 			NumEnums:      7,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_api_common_v1_common_proto_goTypes,
-		DependencyIndexes: file_api_common_v1_common_proto_depIdxs,
-		EnumInfos:         file_api_common_v1_common_proto_enumTypes,
-		MessageInfos:      file_api_common_v1_common_proto_msgTypes,
+		GoTypes:           file_common_v1_common_proto_goTypes,
+		DependencyIndexes: file_common_v1_common_proto_depIdxs,
+		EnumInfos:         file_common_v1_common_proto_enumTypes,
+		MessageInfos:      file_common_v1_common_proto_msgTypes,
 	}.Build()
-	File_api_common_v1_common_proto = out.File
-	file_api_common_v1_common_proto_goTypes = nil
-	file_api_common_v1_common_proto_depIdxs = nil
+	File_common_v1_common_proto = out.File
+	file_common_v1_common_proto_goTypes = nil
+	file_common_v1_common_proto_depIdxs = nil
 }

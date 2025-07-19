@@ -1,0 +1,471 @@
+# Generated with protoc-gen-openapi
+# https://github.com/google/gnostic/tree/master/cmd/protoc-gen-openapi
+
+openapi: 3.0.3
+info:
+    title: User API
+    version: 0.0.1
+paths:
+    /api/v1/users:
+        get:
+            tags:
+                - User
+            description: 获取用户列表
+            operationId: User_GetUserList
+            parameters:
+                - name: page.page
+                  in: query
+                  schema:
+                    type: integer
+                    format: int32
+                - name: page.pageSize
+                  in: query
+                  schema:
+                    type: integer
+                    format: int32
+                - name: page.sortBy
+                  in: query
+                  schema:
+                    type: string
+                - name: page.sortOrder
+                  in: query
+                  schema:
+                    type: string
+                - name: page.query
+                  in: query
+                  schema:
+                    type: string
+                - name: page.filters
+                  in: query
+                  schema:
+                    type: array
+                    items:
+                        type: string
+                - name: keyword
+                  in: query
+                  schema:
+                    type: string
+                - name: role
+                  in: query
+                  schema:
+                    type: integer
+                    format: enum
+                - name: status
+                  in: query
+                  schema:
+                    type: integer
+                    format: enum
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.user.v1.GetUserListReply'
+        post:
+            tags:
+                - User
+            description: 添加用户
+            operationId: User_AddUser
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/api.user.v1.AddUserRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.user.v1.UserInfo'
+    /api/v1/users/login:
+        post:
+            tags:
+                - User
+            description: 登录
+            operationId: User_Login
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/api.user.v1.LoginRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.user.v1.LoginReply'
+    /api/v1/users/logout:
+        post:
+            tags:
+                - User
+            description: 退出登录
+            operationId: User_Logout
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/api.user.v1.LogoutRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.user.v1.LogoutReply'
+    /api/v1/users/register:
+        post:
+            tags:
+                - User
+            description: 注册
+            operationId: User_Register
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/api.user.v1.RegisterRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.user.v1.RegisterReply'
+    /api/v1/users/{id}:
+        get:
+            tags:
+                - User
+            description: 获取用户信息
+            operationId: User_GetUserInfo
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.user.v1.UserInfo'
+        put:
+            tags:
+                - User
+            description: 更新用户信息
+            operationId: User_UpdateUserInfo
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/api.user.v1.UpdateUserInfoRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.user.v1.UserInfo'
+        delete:
+            tags:
+                - User
+            description: 删除用户
+            operationId: User_DeleteUser
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.common.v1.EmptyReply'
+    /api/v1/users/{id}/password:
+        put:
+            tags:
+                - User
+            description: 更新用户密码
+            operationId: User_UpdateUserPassword
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/api.user.v1.UpdateUserPasswordRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.common.v1.EmptyReply'
+    /api/v1/users/{id}/reset-password:
+        put:
+            tags:
+                - User
+            description: 重置用户密码
+            operationId: User_ResetUserPassword
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/api.user.v1.ResetUserPasswordRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.common.v1.EmptyReply'
+    /api/v1/users/{id}/status:
+        put:
+            tags:
+                - User
+            description: 更新用户状态
+            operationId: User_UpdateUserStatus
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/api.user.v1.UpdateUserStatusRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.common.v1.EmptyReply'
+components:
+    schemas:
+        api.common.v1.EmptyReply:
+            type: object
+            properties: {}
+            description: 空响应
+        api.common.v1.PageReply:
+            type: object
+            properties:
+                currentPage:
+                    type: integer
+                    format: int32
+                perPage:
+                    type: integer
+                    format: int32
+                totalItems:
+                    type: string
+                totalPages:
+                    type: integer
+                    format: int32
+                hasNext:
+                    type: boolean
+            description: 分页响应结构
+        api.common.v1.Reply:
+            type: object
+            properties:
+                code:
+                    type: integer
+                    format: int32
+                message:
+                    type: string
+                timestamp:
+                    type: string
+                    format: date-time
+                traceId:
+                    type: string
+                requestId:
+                    type: string
+                metadata:
+                    type: object
+                    additionalProperties:
+                        type: string
+            description: 响应
+        api.user.v1.AddUserRequest:
+            type: object
+            properties:
+                username:
+                    type: string
+                email:
+                    type: string
+                password:
+                    type: string
+                phone:
+                    type: string
+                role:
+                    type: integer
+                    format: enum
+            description: 添加用户请求
+        api.user.v1.GetUserListReply:
+            type: object
+            properties:
+                base:
+                    $ref: '#/components/schemas/api.common.v1.Reply'
+                page:
+                    $ref: '#/components/schemas/api.common.v1.PageReply'
+                users:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/api.user.v1.UserInfo'
+            description: 获取用户列表响应
+        api.user.v1.LoginReply:
+            type: object
+            properties:
+                base:
+                    $ref: '#/components/schemas/api.common.v1.Reply'
+                token:
+                    type: string
+                userInfo:
+                    $ref: '#/components/schemas/api.user.v1.UserInfo'
+            description: 登录响应
+        api.user.v1.LoginRequest:
+            type: object
+            properties:
+                username:
+                    type: string
+                email:
+                    type: string
+                password:
+                    type: string
+            description: 登录请求
+        api.user.v1.LogoutReply:
+            type: object
+            properties:
+                base:
+                    $ref: '#/components/schemas/api.common.v1.Reply'
+            description: 登出响应
+        api.user.v1.LogoutRequest:
+            type: object
+            properties:
+                token:
+                    type: string
+            description: 登出请求
+        api.user.v1.RegisterReply:
+            type: object
+            properties:
+                base:
+                    $ref: '#/components/schemas/api.common.v1.Reply'
+                token:
+                    type: string
+                userInfo:
+                    $ref: '#/components/schemas/api.user.v1.UserInfo'
+            description: 注册响应
+        api.user.v1.RegisterRequest:
+            type: object
+            properties:
+                username:
+                    type: string
+                email:
+                    type: string
+                phone:
+                    type: string
+                password:
+                    type: string
+            description: 注册请求
+        api.user.v1.ResetUserPasswordRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                newPassword:
+                    type: string
+            description: 重置用户密码请求
+        api.user.v1.UpdateUserInfoRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                username:
+                    type: string
+                email:
+                    type: string
+                phone:
+                    type: string
+                avatar:
+                    type: string
+            description: 更新用户信息请求
+        api.user.v1.UpdateUserPasswordRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                oldPassword:
+                    type: string
+                newPassword:
+                    type: string
+            description: 更新用户密码请求
+        api.user.v1.UpdateUserStatusRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                status:
+                    type: integer
+                    format: enum
+            description: 更新用户状态请求
+        api.user.v1.UserInfo:
+            type: object
+            properties:
+                id:
+                    type: string
+                username:
+                    type: string
+                email:
+                    type: string
+                phone:
+                    type: string
+                avatar:
+                    type: string
+                role:
+                    type: integer
+                    format: enum
+                status:
+                    type: integer
+                    format: enum
+                createdAt:
+                    type: string
+                    format: date-time
+                updatedAt:
+                    type: string
+                    format: date-time
+                lastLoginAt:
+                    type: string
+                    format: date-time
+            description: 用户信息
+tags:
+    - name: User
