@@ -5,3 +5,7 @@ tmp
 tmp/*
 .vercel
 .vercel/*
+web/node_modules
+web/node_modules/*
+configs/*
+configs

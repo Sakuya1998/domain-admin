@@ -18,6 +18,7 @@ type PermissionRepository interface {
 	List(page pagination.Pagination) ([]*model.Permission, int64, error)
 	UpdateStatus(id uint, status int) error
 	GetPermissionsByRole(roleID uint) ([]*model.Permission, error)
+	Count() (int64, error)
 }
 
 type permissionRepository struct {
@@ -109,4 +110,11 @@ func (r *permissionRepository) GetPermissionsByRole(roleID uint) ([]*model.Permi
 	}
 
 	return permissions, nil
+}
+
+// Count 获取权限总数
+func (r *permissionRepository) Count() (int64, error) {
+	var count int64
+	err := r.db.Model(&model.Permission{}).Count(&count).Error
+	return count, err
 }

@@ -19,6 +19,7 @@ type UserRepository interface {
 	List(page pagination.Pagination) ([]*model.User, int64, error)
 	UpdateLastLogin(id uint) error
 	UpdateStatus(id uint, status int) error
+	Count() (int64, error)
 }
 
 // userRepository 用户仓储实现
@@ -113,4 +114,11 @@ func (r *userRepository) UpdateLastLogin(id uint) error {
 func (r *userRepository) UpdateStatus(id uint, status int) error {
 	return r.db.Model(&model.User{}).Where("id = ?", id).
 		Update("status", status).Error
+}
+
+// Count 获取用户总数
+func (r *userRepository) Count() (int64, error) {
+	var count int64
+	err := r.db.Model(&model.User{}).Count(&count).Error
+	return count, err
 }

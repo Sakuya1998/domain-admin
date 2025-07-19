@@ -2,6 +2,7 @@ package api
 
 import (
 	"domain-admin/api/handler/auth"
+	"domain-admin/api/handler/dashboard"
 	"domain-admin/api/handler/permission"
 	"domain-admin/api/handler/role"
 	"domain-admin/api/handler/user"
@@ -16,6 +17,7 @@ func RegisterRoutes(r *gin.Engine) {
 	userHandler := user.NewUserHandler()
 	roleHandler := role.NewRoleHandler()
 	permissionHandler := permission.NewPermissionHandler()
+	dashboardHandler := dashboard.NewDashboardHandler()
 
 	// API 路由组
 	api := r.Group("/api")
@@ -69,6 +71,13 @@ func RegisterRoutes(r *gin.Engine) {
 			permissions.PUT("/:id", permissionHandler.UpdatePermission)
 			permissions.DELETE("/:id", permissionHandler.DeletePermission)
 			permissions.PUT("/:id/status", permissionHandler.UpdatePermissionStatus)
+		}
+
+		// 仪表盘统计路由（需要认证）
+		dashboard := api.Group("/dashboard")
+		dashboard.Use(middleware.JWTAuth())
+		{
+			dashboard.GET("/stats", dashboardHandler.GetStats)
 		}
 	}
 }

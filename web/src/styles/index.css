@@ -1,0 +1,118 @@
+/* 全局样式 */
+
+/* NProgress 样式自定义 */
+#nprogress .bar {
+  background: #409eff !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #409eff, 0 0 5px #409eff !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #409eff !important;
+  border-left-color: #409eff !important;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 表格样式优化 */
+.el-table {
+  font-size: 14px;
+}
+
+.el-table .el-table__header-wrapper th {
+  background-color: #fafafa;
+  color: #606266;
+  font-weight: 500;
+}
+
+/* 卡片样式 */
+.page-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 60px);
+}
+
+.content-card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+
+/* 搜索表单样式 */
+.search-form {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+
+.search-form .el-form-item {
+  margin-bottom: 0;
+}
+
+/* 操作按钮样式 */
+.action-buttons {
+  margin-bottom: 20px;
+}
+
+/* 状态标签样式 */
+.status-tag {
+  font-size: 12px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 10px;
+  }
+  
+  .search-form {
+    padding: 15px;
+  }
+}
+
+/* 动画效果 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 表单验证错误样式 */
+.el-form-item.is-error .el-input__inner,
+.el-form-item.is-error .el-textarea__inner {
+  border-color: #f56c6c;
+}
+
+/* 加载状态 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
