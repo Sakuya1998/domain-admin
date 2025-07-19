@@ -2,9 +2,10 @@ syntax = "proto3";
 
 package api.common.v1;
 
-option go_package = "github.com/Sakuya1998/domain-admin/shared/api/common/v1;v1";
+option go_package = "github.com/Sakuya1998/domain-admin/api/common/v1;v1";
 option java_multiple_files = true;
 option java_package = "api.common.v1";
+
 import "google/protobuf/timestamp.proto";
 import "validate/validate.proto";
 
@@ -15,22 +16,28 @@ message Reply {
     google.protobuf.Timestamp timestamp = 3;  // 时间戳
     string trace_id = 4;                // 追踪ID(用于分布式链路追踪)
     string request_id = 5;              // 请求ID(用于请求追踪)    
+    map<string, string> metadata = 6;   // 元数据(自定义字段)
 }
 
-// 分页请求
+// 分页请求参数 (适用于列表查询)
 message PageRequest {
-  int32 page = 1 [(validate.rules).int32.gte = 1];
-  int32 page_size = 2 [(validate.rules).int32 = {gte: 1, lte: 100}];
-  string sort_by = 3;
-  string sort_order = 4; // asc, desc
+    int32 page = 1 [(validate.rules).int32 = {gte: 1, lte: 10000}]; 
+    int32 page_size = 2 [(validate.rules).int32 = {gte: 1, lte: 200}];
+    string sort_by = 3 [(validate.rules).string.max_len = 64];
+    string sort_order = 4 [(validate.rules).string = {
+        in: ["", "asc", "desc", "ASC", "DESC"]
+    }];
+    string query = 5 [(validate.rules).string.max_len = 128]; // 通用搜索词
+    repeated string filters = 6;  // 过滤条件
 }
 
-// 分页响应
+// 分页响应结构
 message PageReply {
-  int32 page = 1;
-  int32 page_size = 2;
-  int64 total = 3;
-  int32 total_pages = 4;
+    int32 current_page = 1;  // 更明确的字段名
+    int32 per_page = 2;      // 替代page_size
+    int64 total_items = 3;   // 替代total
+    int32 total_pages = 4;
+    bool has_next = 5;       // 新增辅助字段
 }
 
 // ID请求
@@ -51,7 +58,7 @@ enum Status {
   STATUS_UNSPECIFIED = 0;
   STATUS_ACTIVE = 1;
   STATUS_INACTIVE = 2;
-  STATUS_DELETED = 3;
+  STATUS_ARCHIVED = 3;  
 }
 
 // 操作类型枚举
@@ -61,6 +68,7 @@ enum OperationType {
   OPERATION_TYPE_UPDATE = 2;
   OPERATION_TYPE_DELETE = 3;
   OPERATION_TYPE_BATCH_DELETE = 4;
+  OPERATION_TYPE_EXPORT = 5;
 }
 
 // 用户角色枚举
